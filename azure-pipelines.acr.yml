@@ -1,7 +1,7 @@
 # Build Docker image for this app using Azure Pipelines
 # http://docs.microsoft.com/azure/devops/pipelines/languages/docker?view=vsts
 pool:
-  vmImage: 'Ubuntu 16.04'
+  vmImage: 'Ubuntu 22.04'
   
 variables:
   imageName: 'pythonsample:$(Build.BuildId)'
@@ -10,7 +10,7 @@ variables:
 steps:
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: 3.5
+    versionSpec: 3.11
     architecture: 'x64'
 
 - task: PythonScript@0
